@@ -27,6 +27,9 @@
  * and also sets battery level.
  */
 
+#include <errno.h>
+#include <stdio.h>
+
 #include "ahrs_ardrone2.h"
 #include "state.h"
 #include "math/pprz_algebra_float.h"
@@ -55,14 +58,35 @@ void ahrs_align(void) {
 
 }
 
+static void dump(const void *_b, size_t s) {
+  const unsigned char *b = _b;
+  size_t n;
+
+  for(n = 0; n < s; ++n) {
+    printf("%02x ", b[n]);
+    if (n%16 == 15)
+      printf("\n");
+  }
+  if (n%16 != 0)
+    printf("\n");
+}
+
 void ahrs_propagate(void) {
+  int l;
+
   //Recieve the main packet
-  at_com_recieve_navdata(buffer);
+  l = at_com_recieve_navdata(buffer);
   navdata_t* main_packet = (navdata_t*) &buffer;
 
+  //if (l < 0)
+  //  printf("errno = %d\n", errno);
+
   //When this isn't a valid packet return
-  if(main_packet->header != NAVDATA_HEADER)
+  if(l < 0 || main_packet->header != NAVDATA_HEADER)
     return;
+
+  //printf("Read %d\n", l);
+  //dump(buffer, l);
 
   //Set the state
   ahrs_impl.state = main_packet->ardrone_state;
@@ -78,6 +102,7 @@ void ahrs_propagate(void) {
 
   //Read the navdata until packet is fully readed
   while(!full_read && navdata_option->size > 0) {
+    //printf ("tag = %d\n", navdata_option->tag);
     //Check the tag for the right option
     switch(navdata_option->tag) {
     case 0: //NAVDATA_DEMO
@@ -112,6 +137,7 @@ void ahrs_propagate(void) {
       break;
 #ifdef USE_GPS_ARDRONE2
     case 27: //NAVDATA_GPS
+      //dump(navdata_option, navdata_option->size);
       navdata_gps = (navdata_gps_t*) navdata_option;
 
       // Send the data to the gps parser
