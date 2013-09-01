@@ -83,7 +83,7 @@ PRINT_CONFIG_VAR(PERIODIC_FREQUENCY)
 PRINT_CONFIG_VAR(TELEMETRY_FREQUENCY)
 
 #ifndef MODULES_FREQUENCY
-#define MODULES_FREQUENCY 512
+#define MODULES_FREQUENCY PERIODIC_FREQUENCY
 #endif
 PRINT_CONFIG_VAR(MODULES_FREQUENCY)
 
@@ -138,7 +138,9 @@ STATIC_INLINE void main_init( void ) {
 
   baro_init();
   imu_init();
-
+#if USE_IMU_FLOAT
+  imu_float_init();
+#endif
   ahrs_aligner_init();
   ahrs_init();
 
@@ -220,6 +222,14 @@ STATIC_INLINE void failsafe_check( void ) {
     autopilot_set_mode(AP_MODE_FAILSAFE);
   }
 
+#if FAILSAFE_ON_BAT_CRITICAL
+  if (autopilot_mode != AP_MODE_KILL &&
+      electrical.bat_critical)
+  {
+    autopilot_set_mode(AP_MODE_FAILSAFE);
+  }
+#endif
+
 #if USE_GPS
   if (autopilot_mode == AP_MODE_NAV &&
       autopilot_motors_on &&
@@ -300,6 +310,7 @@ static inline void on_baro_dif_event( void ) {
 }
 
 static inline void on_gps_event(void) {
+  ahrs_update_gps();
   ins_update_gps();
 #ifdef USE_VEHICLE_INTERFACE
   if (gps.fix == GPS_FIX_3D)

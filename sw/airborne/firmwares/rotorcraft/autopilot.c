@@ -68,10 +68,13 @@ static inline int ahrs_is_aligned(void) {
 
 #if USE_KILL_SWITCH_FOR_MOTOR_ARMING
 #include "autopilot_arming_switch.h"
+PRINT_CONFIG_MSG("Using kill switch for motor arming")
 #elif USE_THROTTLE_FOR_MOTOR_ARMING
 #include "autopilot_arming_throttle.h"
+PRINT_CONFIG_MSG("Using throttle for motor arming")
 #else
 #include "autopilot_arming_yaw.h"
+PRINT_CONFIG_MSG("Using 2 sec yaw for motor arming")
 #endif
 
 #ifndef MODE_STARTUP
@@ -103,7 +106,7 @@ void autopilot_init(void) {
   guidance_v_init();
   stabilization_init();
 
-  /* set startup mode, propagats through to guidance h/v */
+  /* set startup mode, propagates through to guidance h/v */
   autopilot_set_mode(MODE_STARTUP);
 }
 
