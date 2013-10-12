@@ -34,7 +34,7 @@ GPS_BAUD           ?= B57600
 
 # Here we define what the UART1_DEV device mapping
 #$(TARGET).CFLAGS   += -DUART1_DEV=\"/dev/ttyUSB0\"
-$(TARGET).CFLAGS   += -DUART1_DEV=\"/dev/ttyACM0\"
+$(TARGET).CFLAGS   += -DUART1_DEV=\"/dev/ttyACM1\"
 #$(TARGET).CFLAGS  += -DUART0_DEV=\"/dev/ttyO3\"
 
 # for distinction between RAW and SDK version
