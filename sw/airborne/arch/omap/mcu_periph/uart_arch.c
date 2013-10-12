@@ -33,8 +33,8 @@
 
 #include "serial_port.h"
 
-// #define TRACE(fmt,args...)    fprintf(stderr, fmt, args)
-#define TRACE(fmt,args...)
+#define TRACE(fmt,args...)    fprintf(stderr, fmt, args)
+//#define TRACE(fmt,args...)
 
 
 void uart_periph_set_baudrate(struct uart_periph* periph, uint32_t baud) {
