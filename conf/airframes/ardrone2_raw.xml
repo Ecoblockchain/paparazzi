@@ -72,24 +72,25 @@
     <set servo="BOTTOM_RIGHT" value="motor_mixing.commands[SERVO_BOTTOM_RIGHT]"/>
   </command_laws>
 
+  <include href="conf/airframes/ardrone2_raw_ben.xml"/>
   <section name="IMU" prefix="IMU_">
     <!-- Accelero -->
-    <define name="ACCEL_X_NEUTRAL" value="2048"/>
+    <!--define name="ACCEL_X_NEUTRAL" value="2048"/>
     <define name="ACCEL_Y_NEUTRAL" value="2048"/>
-    <define name="ACCEL_Z_NEUTRAL" value="2048"/>
+    <define name="ACCEL_Z_NEUTRAL" value="2048"/-->
 
     <!-- Magneto calibration -->
-    <define name="MAG_X_NEUTRAL" value="0"/>
+    <!--define name="MAG_X_NEUTRAL" value="0"/>
     <define name="MAG_Y_NEUTRAL" value="0"/>
     <define name="MAG_Z_NEUTRAL" value="-180"/>
     <define name="MAG_X_SENS" value="16." integer="16"/>
     <define name="MAG_Y_SENS" value="16." integer="16"/>
-    <define name="MAG_Z_SENS" value="16." integer="16"/>
+    <define name="MAG_Z_SENS" value="16." integer="16"/-->
 
     <!-- Magneto current calibration -->
-    <define name="MAG_X_CURRENT_COEF" value="0.0"/>
+    <!--define name="MAG_X_CURRENT_COEF" value="0.0"/>
     <define name="MAG_Y_CURRENT_COEF" value="0.0"/>
-    <define name="MAG_Z_CURRENT_COEF" value="0.0"/>
+    <define name="MAG_Z_CURRENT_COEF" value="0.0"/-->
   </section>
 
   <section name="IMU" prefix="IMU_">
@@ -101,10 +102,14 @@
   <!-- local magnetic field -->
   <!-- http://paparazzi.enac.fr/wiki/Subsystem/ahrs#Local_Magnetic_Field -->
   <section name="AHRS" prefix="AHRS_">
+    <!-- Erw Wen -->
+    <define name="H_X" value="0.39327413"/>
+    <define name="H_Y" value="-0.0182952"/>
+    <define name="H_Z" value="0.91923922"/>
     <!-- Toulouse -->
-    <define name="H_X" value="0.513081"/>
+    <!--define name="H_X" value="0.513081"/>
     <define name="H_Y" value="-0.00242783"/>
-    <define name="H_Z" value="0.858336"/>
+    <define name="H_Z" value="0.858336"/-->
     <!-- Delft -->
     <!--define name="H_X" value="0.3892503"/>
     <define name="H_Y" value="0.0017972"/>
@@ -198,7 +203,8 @@
 
   <section name="GUIDANCE_H" prefix="GUIDANCE_H_">
     <!-- Good weather -->
-    <define name="MAX_BANK" value="20" unit="deg"/>
+    <!--define name="MAX_BANK" value="20" unit="deg"/-->
+    <define name="MAX_BANK" value="10" unit="deg"/>
     <!-- Bad weather -->
     <!-- define name="MAX_BANK" value="32" unit="deg"/ -->
     <define name="PGAIN" value="79"/>

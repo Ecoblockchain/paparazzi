@@ -1,0 +1,24 @@
+<airframe>
+  <section name="IMU" prefix="IMU_">
+    <define name="ACCEL_X_NEUTRAL" value="2031"/>
+    <define name="ACCEL_Y_NEUTRAL" value="2038"/>
+    <define name="ACCEL_Z_NEUTRAL" value="2053"/>
+    <define name="ACCEL_X_SENS" value="19.2941902716" integer="16"/>
+    <define name="ACCEL_Y_SENS" value="19.5208279266" integer="16"/>
+    <define name="ACCEL_Z_SENS" value="20.1002569423" integer="16"/>
+
+    <define name="MAG_X_NEUTRAL" value="83"/>
+    <define name="MAG_Y_NEUTRAL" value="-70"/>
+    <define name="MAG_Z_NEUTRAL" value="-124"/>
+    <define name="MAG_X_SENS" value="14.0208101413" integer="16"/>
+    <define name="MAG_Y_SENS" value="13.8730256304" integer="16"/>
+    <define name="MAG_Z_SENS" value="15.1919671026" integer="16"/>
+
+    <!-- Magneto current calibration stolen from another setup, since I
+	 don't have a remote to measure it -->
+    <define name="MAG_X_CURRENT_COEF" value="0.00175105205138"/>
+    <define name="MAG_Y_CURRENT_COEF" value="0.000172518663485"/>
+    <define name="MAG_Z_CURRENT_COEF" value="0.00022802329524"/>
+
+  </section>
+</airframe>
