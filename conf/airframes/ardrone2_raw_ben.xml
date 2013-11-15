@@ -19,6 +19,5 @@
     <define name="MAG_X_CURRENT_COEF" value="0.00175105205138"/>
     <define name="MAG_Y_CURRENT_COEF" value="0.000172518663485"/>
     <define name="MAG_Z_CURRENT_COEF" value="0.00022802329524"/>
-
   </section>
 </airframe>

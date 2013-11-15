@@ -278,8 +278,7 @@ static inline void gps_ubx_ucenter_config_nav(void)
 #define GPS_PORT_SPI   0x04
 
 #ifndef GPS_PORT_ID
-//#define GPS_PORT_ID GPS_PORT_UART1
-#define GPS_PORT_ID GPS_PORT_USB
+#define GPS_PORT_ID GPS_PORT_UART1
 #endif
 
 #define __UBX_GPS_BAUD(_u) _u##_BAUD

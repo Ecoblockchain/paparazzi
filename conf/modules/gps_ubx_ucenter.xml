@@ -28,5 +28,3 @@ Warning: you still need to tell the driver
     <define name="GPS_UBX_UCENTER"/>
   </makefile>
 </module>
-
-

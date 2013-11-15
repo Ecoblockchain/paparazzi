@@ -32,7 +32,9 @@
   </firmware>
 
   <modules main_freq="512">
-    <load name="gps_ubx_ucenter.xml"/>
+    <load name="gps_ubx_ucenter.xml">
+      <define name="GPS_PORT_ID" value="GPS_PORT_USB"/>
+    </load>
     <!--load name="sys_mon.xml"/-->
   </modules>
 
