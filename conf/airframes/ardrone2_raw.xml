@@ -35,6 +35,10 @@
     <load name="gps_ubx_ucenter.xml">
       <define name="GPS_PORT_ID" value="GPS_PORT_USB"/>
     </load>
+    <load name="rotorcraft_cam.xml">
+      <define name="DEFAULT_MODE" value="MODE_WP"/>
+      <define name="TRACK_WP" value="CAM"/>
+    </load>
     <!--load name="sys_mon.xml"/-->
   </modules>
 
