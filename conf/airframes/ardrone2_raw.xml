@@ -36,8 +36,8 @@
       <define name="GPS_PORT_ID" value="GPS_PORT_USB"/>
     </load>
     <load name="rotorcraft_cam.xml">
-      <define name="DEFAULT_MODE" value="MODE_WP"/>
-      <define name="TRACK_WP" value="CAM"/>
+      <define name="ROTORCRAFT_CAM_DEFAULT_MODE" value="ROTORCRAFT_CAM_MODE_WP"/>
+      <define name="ROTORCRAFT_CAM_TRACK_WP" value="WP_CAM"/>
     </load>
     <!--load name="sys_mon.xml"/-->
   </modules>
