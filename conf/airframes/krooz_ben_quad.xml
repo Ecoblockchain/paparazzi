@@ -1,4 +1,4 @@
-<!DOCTYPE airframe SYSTEM "../../airframe.dtd">
+<!DOCTYPE airframe SYSTEM "airframe.dtd">
 
 <airframe name="Quadrotor KroozSD Pwm">
 
@@ -218,9 +218,9 @@
   </section>
 
   <section name="BAT">
-    <define name="CRITIC_BAT_LEVEL" value="14.0" unit="V"/>
-    <define name="LOW_BAT_LEVEL" value="14.2" unit="V"/>
-    <define name="MAX_BAT_LEVEL" value="16.8" unit="V"/>
+    <define name="CRITIC_BAT_LEVEL" value="10.5" unit="V"/>
+    <define name="LOW_BAT_LEVEL" value="10.7" unit="V"/>
+    <define name="MAX_BAT_LEVEL" value="12.5" unit="V"/>
   </section>
 
 </airframe>
