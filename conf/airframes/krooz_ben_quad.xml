@@ -15,7 +15,9 @@
       <define name="SERVO_HZ" value="400"/>
     </subsystem>
 
-    <subsystem name="radio_control" type="ppm"/>
+    <subsystem name="radio_control" type="sbus">
+      <configure name="SBUS_PORT" value="UART1"/>
+    </subsystem>
     <subsystem name="telemetry"     type="transparent"/>
     <subsystem name="imu"           type="krooz_sd"/>
     <subsystem name="gps"           type="ublox"/>
@@ -33,7 +35,7 @@
     <load name="gps_ubx_ucenter.xml"/>
     <load name="geo_mag.xml"/>
     <load name="osd_max7456.xml"/>
-    <load name="hott_telemetry.xml"/>
+    <!--load name="hott_telemetry.xml"/-->
   </modules>
 
   <servos driver="Pwm">
