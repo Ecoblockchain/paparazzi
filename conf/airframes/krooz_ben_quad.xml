@@ -39,10 +39,11 @@
   </modules>
 
   <servos driver="Pwm">
-    <servo name="FRONT"   no="0" min="1000" neutral="1190" max="1900"/>
-    <servo name="BACK"    no="1" min="1000" neutral="1190" max="1900"/>
-    <servo name="RIGHT"   no="2" min="1000" neutral="1190" max="1900"/>
-    <servo name="LEFT"    no="3" min="1000" neutral="1190" max="1900"/>
+    <!-- 3DR basic quad motor layout. Front right is clockwise. -->
+    <servo name="FRONT_RIGHT"   no="0" min="1000" neutral="1190" max="1900"/>
+    <servo name="BACK_LEFT"    no="1" min="1000" neutral="1190" max="1900"/>
+    <servo name="FRONT_LEFT"   no="2" min="1000" neutral="1190" max="1900"/>
+    <servo name="BACK_RIGHT"    no="3" min="1000" neutral="1190" max="1900"/>
   </servos>
 
   <commands>
