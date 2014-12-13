@@ -68,15 +68,20 @@
     <define name="NB_MOTOR" value="4"/>
     <define name="SCALE" value="512"/>
     <!-- we happen to be set up the same as the quad cross example on
-         the website -->
+         the website, but their 0 is our 0, 1 -> 3, 2 -> 1, 3 -> 2,
+	 or our 0 -> 0, 1 -> 2, 2 -> 3, 3 -> 1 -->
     <define name="ROLL_COEF"
-      value="{ -MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/>
+        value="{ -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE }"/>
+ <!--   value="{ -MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/-->
     <define name="PITCH_COEF"
-      value="{  MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/>
+        value="{  MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE }"/>
+<!--    value="{  MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/-->
     <define name="YAW_COEF"
-      value="{ -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/>
+        value="{ -MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/>
+<!--    value="{ -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/-->
     <define name="THRUST_COEF"
-      value="{  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/>
+        value="{  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/>
+<!--    value="{  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/-->
   </section>
 
   <section name="IMU" prefix="IMU_">
