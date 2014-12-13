@@ -67,10 +67,16 @@
     <define name="TRIM_YAW" value="0"/>
     <define name="NB_MOTOR" value="4"/>
     <define name="SCALE" value="512"/>
-    <define name="ROLL_COEF"   value="{    0,  MOTOR_MIXING_SCALE,    0, -MOTOR_MIXING_SCALE }"/>
-    <define name="PITCH_COEF"  value="{  MOTOR_MIXING_SCALE,    0, -MOTOR_MIXING_SCALE,    0 }"/>
-    <define name="YAW_COEF"    value="{ -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/>
-    <define name="THRUST_COEF" value="{  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/>
+    <!-- we happen to be set up the same as the quad cross example on
+         the website -->
+    <define name="ROLL_COEF"
+      value="{ -MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/>
+    <define name="PITCH_COEF"
+      value="{  MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/>
+    <define name="YAW_COEF"
+      value="{ -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE, -MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/>
+    <define name="THRUST_COEF"
+      value="{  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE,  MOTOR_MIXING_SCALE }"/>
   </section>
 
   <section name="IMU" prefix="IMU_">
