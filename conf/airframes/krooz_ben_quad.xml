@@ -225,7 +225,7 @@
     <define name="SENSORS_PARAMS" value="&quot;nps_sensors_params_default.h&quot;"/>
   </section>
 
-  <section name="AUTOPILOT">
+  <section name="MODE" prefix="MODE_">
     <define name="MODE_MANUAL" value="AP_MODE_ATTITUDE_DIRECT"/>
     <define name="MODE_AUTO1"  value="AP_MODE_HOVER_Z_HOLD"/>
     <define name="MODE_AUTO2"  value="AP_MODE_NAV"/>
