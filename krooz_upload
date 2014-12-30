@@ -1,0 +1,1 @@
+sudo /usr/bin/python /home/ben/git-work/paparazzi/sw/tools/dfu/stm32_mem.py --verbose --product=any --addr=0x8004000 /home/ben/git-work/paparazzi/var/aircrafts/krooz_quad/ap/ap.bin
