@@ -212,16 +212,17 @@
     <define name="HOVER_KP"    value="120"/>
     <define name="HOVER_KD"    value="80"/>
     <define name="HOVER_KI"    value="20"/>
-	  <define name="RC_DESCENT_COEF" value ="200"/>
+    <define name="RC_DESCENT_COEF" value ="200"/>
+    <define name="NOMINAL_HOVER_THROTTLE" value="0.6"/>
   </section>
 
   <section name="GUIDANCE_H" prefix="GUIDANCE_H_">
     <define name="USE_REF" value="1"/>
     <define name="USE_SPEED_REF" value="1"/> <!-- using RC to control horizontal setpoint -->
-    <define name="MAX_BANK" value="27" unit="deg"/>
+    <define name="MAX_BANK" value="20" unit="deg"/>
     <define name="REF_MAX_ACCEL" value="7."/> <!-- max reference horizontal acceleration in m/s2 -->
     <define name="REF_MAX_SPEED" value="2."/> <!-- max reference horizontal speed in m/s -->
-		<define name="RC_SPEED_DEAD_BAND" value="200000"/>
+    <define name="RC_SPEED_DEAD_BAND" value="200000"/>
     <define name="PGAIN" value="100"/>
     <define name="DGAIN" value="120"/>
     <define name="IGAIN" value="10"/>
